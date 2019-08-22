@@ -1,0 +1,40 @@
+// I N T R O • S T R I P E
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: image-url('https://images.pexels.com/photos/629161/pexels-photo-629161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center center $color-1;
+    background-size: cover;
+    color: white;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color-1, 0.8);
+        z-index: 2;
+    }
+
+    .wrapper {
+        text-align: center;
+        z-index: 3;
+    }
+
+    .hero-text {
+        @include vw-unit(80px, $w-sm);
+        display: block;
+        text-shadow: 0 0 2px black;
+    }
+
+    .sub-title {
+        @include vw-unit(30px, $w-sm);
+        display: block;
+        text-shadow: 0 0 2px black;
+    }
+}

@@ -1,112 +1,22 @@
-// M A I N • C S S • F I L E
-/*!
-normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+// M A S T E R • G R I D • 1 . 0 . B E T A
+// - C R E A T E D • B Y • H L U N A 8 8 -
+// --------- M A R C H • 2 0 1 9 ---------
 
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+// Import dependancies
+@import 'breakpoint';
+@import 'variables';
 
-@import 'modules/navigation';
+// Core Files
+@import 'settings/normalize',
+        'settings/animate',
+        'settings/functions',
+        'settings/extends',
+        'settings/mixins',
+        'settings/header',
+        'settings/loader',
+        'settings/navigation';
 
-
-html, body{
-	margin: 0;
-	padding: 0;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	color: #000;
-	width: 100%;
-	height: 100%;
-}
-
-// .container{
-// 	float: left;
-// 	clear: both;
-// 	width: 100%;
-// 	height: auto;
-// 	padding-top: 75px;
-// 	position: relative;
-
-// 	.wrapper{
-// 		display: block;
-// 		width: 100%;
-// 		max-width: 1250px;
-// 		margin: 0 auto;
-// 		padding: 0 25px;
-
-// 	}
-
-// 	&#start{
-// 		position: relative;
-// 		.bgc{
-// 			position: absolute;
-// 			width: 100%;
-// 			height: 100%;
-// 			top: 0;
-// 			left: 0;
-// 			background: image-url("01.jpg") top center #506c87;
-// 			background-attachment: fixed;
-// 			background-size: cover;
-// 			z-index: 0;
-// 		}
-// 		.wrapper{ position: relative; z-index: 1; color: #fff; }
-// 	}
-
-// 	&#about-us{
-// 		background: #d0d0d0;
-// 	}
-
-// 	&#our-music{
-// 		background: #496daf;
-
-// 		.wrapper{ color: #fff; }
-// 	}
-
-// 	&#calendar{
-// 		background: #87a96b;
-
-// 		.wrapper{ color: #fff; }
-// 	}
-// }
-
-
-.hsContainer {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    opacity: 0;
-}
-.hsContent {
-    max-width: 450px;
-    margin: -150px auto 0 auto;
-    display: table-cell;
-    vertical-align: middle;
-    color: #ebebeb;
-    padding: 0 8%;
-    text-align: center
-}
-.bcg {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-}
-/* Slide 1 */
-#slide-1{
-
-	width: 100%;
-	height: 600px;
-	.bcg {background: image-url("01.jpg"); }
-}
-
-
-
-
+// Main core
+@import 'core';
+// Sections
+@import 'modules';

@@ -1,0 +1,161 @@
+// C O R E • S T Y L E S 
+
+body {
+    font-family: $special-font;
+    font-size: $base-font-size;
+    color: #121212;
+}
+
+a {
+    color: $color-1;
+    font-style: normal;
+    font-weight: normal;
+
+    &:hover {
+        color: $color-2;
+    }
+
+    &:visited {
+        color: $color-1;
+    }
+}
+
+h1,
+h2,
+h3, 
+h4, 
+h5,
+h6 {
+    display: block;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+
+    + p {
+        margin-top: 0;
+    }
+}
+
+h1 {
+    font-size: $fz-lg + 14;
+}
+
+h2 {
+    font-size: $fz-lg + 9;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: $fz-lg + 5;
+}
+
+// @include breakpoint(screen $w-md) {
+    
+// }
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        max-width: $w-lg;
+        padding: $base-gap;
+    }
+
+    &.scrolledDown {
+
+        .animated {
+            @extend %fadeOutUp;
+            animation-delay: 300ms;
+        }
+    }
+
+    &.scrolledUp {
+
+        .animated {
+            @extend %fadeInDown;
+            animation-delay: 300ms;
+        }
+    }
+}
+
+.full-screen {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.mobile-hidden {
+
+    @include breakpoint(screen (max-width $w-sm - 1)) {
+        
+        display: none;
+    }
+}
+
+// Scroll Icon
+$icon-color: white;
+$hover-color: $color-1;
+$border-thickness: 1px;
+
+#scroll-icon {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 15px;
+    height: 25px;
+    border: $border-thickness solid $icon-color;
+    background-color: transparent;
+    border-radius: 8px;
+    text-indent: -9000px;
+    overflow-x: hidden;
+    cursor: pointer !important;
+    transition: ease-in-out 0.2s;
+    transition-property: background-color, border;
+
+    .mousewheel {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 2px;
+        height: 4px;
+        border: $border-thickness solid $icon-color;
+        background: transparent;
+        border-radius: 4px;
+        animation: moveMouseWheel infinite 2s;
+        transition: ease-in-out 0.2s;
+        transition-property: background-color, border;
+    }
+
+    &:hover {
+        background-color: $icon-color;
+        // border-color: $hover-color;
+
+        .mousewheel {
+            background-color: $icon-color;
+            border-color: $hover-color;
+        }
+    }
+}
+
+@keyframes moveMouseWheel {
+    
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    75% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

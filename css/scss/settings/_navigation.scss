@@ -1,0 +1,247 @@
+// N A V I G A T I O N • B A R
+$color: #ffffff; // If transparent header is selected (if not, font will use $sticky-color variable)
+$sticky-background: #ffffff; // main header background
+$sticky-color: $color-1;
+$padding: 20px 0; // This determines the height of the header bar on top
+$padding-on-scroll: 0; // This determines the height of the header bar when scrolled
+$logo-width: image-width('logo.png'); // The width of the Logo column.
+
+// --------------------------------- N A V I G A T I O N ------------------------------------
+$top-color: $color-1;
+$items: 5; // NUMBER OF ELEMENTS IN THE NAVIGATION
+//MOBILE DROPDOWN ELEMENTS
+$dropdown-color: $color-1; // Color of the items on the mobile menu
+$dropdown-bg: #ffffff; // Background of the dropdown menu
+$dropdown-hover-color: #ffffff; // HOVER STYLE
+$dropdown-hover-bg: $color-2; // HOVER STYLE
+$mobile-breakpoint: $w-md; // the breakpoint between the mobile menu and the desktop menu
+$mobile-only: false; // if true, only shows the burger icon and a dropdown list menu
+// DESKTOP MENU ELEMENTS
+$desktop-color: $color-1; // Color of the items text
+$desktop-bg: $sticky-background; // Background of the bar
+$desktop-hover-color: $sticky-background; // HOVER STYLE
+$desktop-hover-bg: $color-2; // HOVER STYLE
+// TRANSPARENT HEADER
+$transparent-color: #ffffff; // Text color when the navigations is transparent
+$transparent-bg: transparent; // Do not touch, unless you wish to override the normal behavior
+$transparent-hover-color: #ffffff; // Text color on hover
+$transparent-hover-bg: $color-2; // Item background
+// SPECIAL HOVER STYLES: These will not work when Mobile only behavior ($mobile-only = true) is set
+    // 01: BOTTOM LINE GROW FROM THE MIDDLE 
+    // 02: CURTAIN FROM THE MIDDLE 
+    // 03: SCALE TO FRONT
+    // 04: SIDE BRACKETS
+$hover-styles: 03;
+
+
+
+
+nav.nav-bar {
+
+    // BURGER BUTTON
+    label[for=toggler] {
+        position: relative;
+        z-index: 2;
+
+        display: block;
+        float: left;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        text-indent: -30000px;
+        // background-color: rgba(#fff, 0.5);
+        cursor: pointer;
+
+        span {
+            @include transition-animation($_properties: (display top transform));
+
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            width: 30px;
+            height: 5px;
+            background-color: $top-color;
+
+            &:first-child {
+
+                top: 22px;
+            }
+
+            &:last-child {
+
+                top: 32px;
+            }
+        }
+
+        .scrolled & {
+
+            span {
+                background-color: $desktop-color;
+            }
+        }
+
+        &.active {
+
+            span:nth-child(2) {
+                top: 22px;
+
+                display: block;
+                transform: rotate(45deg);
+            }
+
+            span:first-child { left: 50%; width: 0;  }
+
+            span:last-child {
+                top: 22px;
+
+                display: block;
+                transform: rotate(-45deg);
+            }
+        }
+
+        .s-transparent & {
+
+            span {
+                background-color: $transparent-color;
+            }
+
+        }
+        .scrolled.s-transparent & {
+
+            span {
+                background-color: $desktop-color;
+            }
+        }
+    }
+
+    #toggler {
+        display: none;
+    }
+
+// MENU
+    ul.nav-items {
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        right: 0;
+        display: flex;
+        opacity: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: auto;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none !important;
+        transition: transform 0.4s ease-in-out 0.05s, opacity 0.35s ease-in-out 0.05s;
+        transform: translateY(-150%);
+
+
+        li {
+            flex-basis: 100%;
+            width: 100%;
+
+            a {
+                @include transition-animation(background);
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid darken($dropdown-bg, 10);
+                background-color: $dropdown-bg;
+                color: $dropdown-color;
+                font-weight: bold;
+                text-decoration: none;
+
+                span {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                &:hover {
+                    background-color: $dropdown-hover-bg;
+                    color: $dropdown-hover-color;
+                }
+            }
+
+            &:last-child a {
+                border: 0;
+            }
+        }
+
+        &.opened {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @if($mobile-only == false) {
+
+        @include breakpoint(screen $mobile-breakpoint) {
+
+            label[for='toggler'] {
+                display: none;
+            }
+
+            ul.nav-items {
+                position: relative;
+                top: auto;
+                right: auto;
+                display: grid;
+                opacity: 1;
+                background-color: transparent;
+                transform: none;
+                grid-template-columns: repeat($items, 1fr);
+
+                li {
+                    width: auto;
+
+                    a {
+                        position: relative;
+                        padding: 15px 18px;
+                        border: 0;
+                        background-color: transparent;
+                        color: $desktop-color;
+                        font-size: 13 / 16 * 1rem;
+                        font-weight: normal;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .scrolled & {
+
+                ul.nav-items li a {
+                    color: $desktop-color;
+                }
+            }
+
+            .s-transparent & {
+
+                ul.nav-items li a {
+                    background-color: $transparent-bg;
+                    color: $transparent-color;
+
+                    &:hover {
+                        background: $transparent-hover-bg;
+                        color: $transparent-hover-color;
+                    }
+                }
+            }
+
+            .scrolled.s-transparent & {
+
+                ul.nav-items li a {
+                    color: $desktop-color;
+
+                    &:hover {
+                        background: $desktop-hover-bg;
+                        color: $desktop-hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

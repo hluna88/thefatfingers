@@ -1,0 +1,9 @@
+// G L O B A L • V A R I A B L E S
+
+// Core styles variables
+$special-font: 'Montserrat', sans-serif;
+$base-font-size: 16px;
+$base-gap: 30px;
+
+@import 'variables/colors',
+        'variables/sizes';

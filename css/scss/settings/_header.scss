@@ -1,0 +1,94 @@
+// H E A D E R
+$color: #ffffff; // If transparent header is selected (if not, font will use $sticky-color variable)
+$sticky-background: #ffffff; // main header background
+$sticky-color: $color-1;
+$padding: 20px 0; // This determines the height of the header bar on top
+$padding-on-scroll: 0; // This determines the height of the header bar when scrolled
+$logo-width: image-width('logo.png'); // The width of the Logo column.
+$mobile-only: false; // Set the navigation to Mobile style only (hamburger icon)
+$mobile-breakpoint: $w-md;
+
+#header {
+    @include transition-animation($_properties: background-color);
+    width: 100%;
+    padding: $padding-on-scroll;;
+    background-color: $sticky-background;
+    box-shadow: 0 1px 1px 1px rgba(#000000, 0.08);
+
+    &.sticky {
+        position: fixed;
+        z-index: 900;
+    }
+
+    &.s-transparent {
+        background-color: transparent;
+        box-shadow: none;
+
+        &.scrolled {
+            background-color: $sticky-background;
+            box-shadow: 0 1px 1px 1px rgba(#000000, 0.08);
+        }
+    }
+
+    .container {
+        position: relative;
+        max-width: $w-max;
+        margin: 0 auto;
+        margin-bottom: 0;
+        padding-left: $base-gap;
+        padding-right: $base-gap;
+    }
+
+    .head-grid {
+        display: grid;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: $logo-width auto;
+        grid-template-rows: 1fr;
+    }
+    
+    @if($mobile-only == false) {
+
+        @media only screen and (min-width: $mobile-breakpoint) {
+            @include transition-animation($_properties: (padding, background-color));
+            padding: $padding;
+
+            &.scrolled {
+                padding: $padding-on-scroll;
+            }
+        }
+    }
+}
+
+.logo {
+    @include transition-animation($_properties: transform);
+    display: flex;
+    align-items: center;
+    width: $logo-width;
+    height: 100%;
+    color: $sticky-color;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    a {
+        color: inherit !important;
+        text-decoration: none;
+    }
+
+    .s-transparent & {
+        color: $color;
+    }
+
+    .sticky.scrolled & {
+        color: $sticky-color;
+    }
+
+    @media only screen and(min-width: $mobile-breakpoint) {
+        font-size: 1.5rem;
+
+        .scrolled & {
+            transform: scale(0.8);
+        }
+    }
+}

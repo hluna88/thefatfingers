@@ -1,0 +1,27 @@
+// A B O U T
+
+#about {
+    
+    .wrapper {
+        text-align: center;
+        
+        h2 {
+            font-size: rems(25px);
+        }
+
+        p {
+            font-size: rems(18px);
+        }
+
+        @include breakpoint(screen $w-md) {
+            
+            h2 {
+                @include vw-unit(42px, $w-lg);
+            }
+
+            p {
+                @include vw-unit(23px, $w-lg);
+            }
+        }
+    }
+}

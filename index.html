@@ -1,107 +1,62 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>The Fat Fingers - Rock, Blues & Rock n' Roll</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Heebo:300" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Hugo Luna - Front-end Web Developer</title>
 </head>
 <body>
-
-	<nav id="main-navigation">
-		<div class="nav-wrap">
-			<div id="logo"><a href="#start">The Fat Fingers</a></div>
-			<a id="burger-btn" href="#"><span></span><span></span><span></span></a>
-			<ul id="topnav">
-				<li class="nav-item"><a href="#about-us">About Us</a></li>
-				<li class="nav-item"><a href="#our-music">Our Music</a></li>
-				<li class="nav-item"><a href="#calendar">Calendar</a></li>
-				<li class="nav-item"><a href="#contact-us">Contact Us</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<!-- HTML -->
-	<section id="slide-1" class="homeSlide">
-		<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1" >
-			<div class="hsContainer">
-				<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2" >
-					<h2>
-						Fade out elements before
-						<br>they leave viewport</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- S T A R T -->
-	<!-- <div id="start">
-		<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#start">
-			<div class="wrapper">
-				<h4>Title</h4>
-				<div class="content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- A B O U T • U S -->
-	<!-- <div id="about-us" class="container">
-		<div class="wrapper">
-			<h4>Title</h4>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- O U R • M U S I C -->
-	<!-- <div id="our-music" class="container">
-		<div class="wrapper">
-			<h4>Title</h4>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- C A L E N D A R -->
-	<!-- <div id="calendar" class="container">
-		<div class="wrapper">
-			<h4>Title</h4>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- C O N T A C T • U S -->
-	<!-- <div id="contact-us" class="container">
-		<div class="wrapper">
-			<h4>Title</h4>
-			<div class="content">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- S C R I P T • F I L E S -->
-	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="plugins/skrollr/skrollr.js"></script>
-
-	<script type="text/javascript" src="js/main.min.js"></script>
-	<script type="text/javascript">
-		( function( $ ) {
-		    // Init Skrollr
-		    var s = skrollr.init({
-		        render: function(data) {
-		            //Debugging - Log the current scroll position.
-		            //console.log(data.curTop);
-		        }
-		    });
-		} )( jQuery );
-	</script>
+    <div class="loader">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <header id="header" class="section header s-transparent sticky">
+        <div class="container">
+            <div class="head-grid">
+                <div class="logo">
+                    <!-- IMAGE VERSION -->
+                    <!-- <img src="images/logo.png" alt="hluna88"> -->
+                    <!--TEXT VERSION -->
+                    <a href="/">COMPANY NAME</a>
+                </div>
+                <nav id="main-nav" role="navigation" class="navigation nav-bar">
+                    <label for="toggler">Toggle Navigation <span></span><span></span><span></span></label>
+                    <input type="checkbox" id="toggler">
+                    <ul class="nav-items">
+                        <li class="item item-1"><a class="scrollable" href="#home"><span>Home</span></a></li>
+                        <li class="item item-2"><a class="scrollable" href="#about-us"><span>About</span></a></li>
+                        <li class="item item-3"><a class="scrollable" href="#services"><span>Services</span></a></li>
+                        <li class="item item-4"><a href="/internal.html"><span>Internal</span></a></li>
+                        <li class="item item-4"><a class="scrollable" href="#contact"><span>Contact</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="main">
+        <section class="full-screen" id="intro">
+            <div class="wrapper">
+                <strong class="hero-text animated jackInTheBox delay-3s">Hello World!</strong>
+                <strong class="sub-title animated fadeInUp delay-4s">Lorem Ipsum Dolor Sit Amet</strong>
+                <div class="btn-container"><a href="#about" class="button ghost white rounded animated flipInX delay-5s scrollable">Read More</a></div>
+                <div class="btn-container">
+                    <a id="scroll-icon" href="#about" class="scrollable animated flipInY delay-6s"><span class="mousewheel"></span> Scroll Down</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="full-screen">
+            <div class="wrapper">
+                <h2>HELLO WORLD!</h2>
+                <h3>I'm another stripe</h3>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.hluna88.com/slick-slider/slick.min.js" type="text/javascript" async></script>
+    <script src="https://cdn.hluna88.com/enquire/enquire.min.js" type="text/javascript" async></script>
+    <script src="https://cdn.hluna88.com/jquery-mask/mask.min.js" type="text/javascript" async></script>
+    <script src="https://cdn.hluna88.com/lazyload/lazyload.min.js" type="text/javascript" async></script>
+    <script src="/js/site.min.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
